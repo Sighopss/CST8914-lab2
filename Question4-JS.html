@@ -2,21 +2,37 @@
 <html lang="en">
 
 <head>
-    <title>Question 4 - JavaScript</title>
-
+  <meta charset="UTF-8">
+  <title>Question 4 - JavaScript</title>
 </head>
 
 <body>
-    <h1>HTML DOM Events</h1>
-    <p>Trigger a function on hover that will output "Hello World":</p>
+  <h1>HTML DOM Events</h1>
+  <p>Trigger a function on hover or keyboard focus that will output "Hello World":</p>
 
-    <button onmouseover="myFunction()">Action!</button>
-    <p id="demo"></p>
-</body>
-<script>
+  <!-- working now for mouse + keyboard -->
+  <button id="actionButton">Action!</button>
+
+  <p id="demo"></p>
+
+  <script>
     function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello World";
+      document.getElementById("demo").innerHTML = "Hello World";
     }
-</script>
+
+    const btn = document.getElementById("actionButton");
+
+    // Mouse support
+    btn.addEventListener("mouseover", myFunction);
+
+    // Keyboard support (focus & keypress)
+    btn.addEventListener("focus", myFunction);
+    btn.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        myFunction();
+      }
+    });
+  </script>
+</body>
 
 </html>
