@@ -8,11 +8,9 @@
 
 <body>
   <h1>HTML DOM Events</h1>
-  <p>Trigger a function on hover or keyboard focus that will output "Hello World":</p>
+  <p>Trigger a function on hover or by pressing the button with the keyboard to output "Hello World":</p>
 
-  <!-- working now for mouse + keyboard -->
   <button id="actionButton">Action!</button>
-
   <p id="demo"></p>
 
   <script>
@@ -22,16 +20,11 @@
 
     const btn = document.getElementById("actionButton");
 
-    // Mouse support
+    // Mouse support (hover)
     btn.addEventListener("mouseover", myFunction);
 
-    // Keyboard support (focus & keypress)
-    btn.addEventListener("focus", myFunction);
-    btn.addEventListener("keydown", function (event) {
-      if (event.key === "Enter" || event.key === " ") {
-        myFunction();
-      }
-    });
+    //  Keyboard & mouse click support
+    btn.addEventListener("click", myFunction);
   </script>
 </body>
 
