@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <title>Question 2 - CSS</title>
-   <style>
+  <meta charset="UTF-8">
+  <title>Question 2 - CSS</title>
+  <style>
     .mainsection a {
       text-decoration: none;
       color: #414040;
     }
 
-   
+    /* to Add visible focus styles */
     .mainsection a:focus,
     .mainsection a:hover {
       outline: 2px solid #005fcc;
+      outline-offset: 2px;
       background-color: #e6f0ff;
     }
-   </style>
+
+    /* to Visually hide text but keep it for screen readers */
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-<div class="mainsection">
-  
-  <h1>Shopping categories</h1>
+  <div class="mainsection">
+    <!--  Keeping the image for visuals but add real text for accessibility -->
+    <h1>
+      <img src="lab2/lab2-imageoftext.gif" alt="Shopping categories">
+      <span class="sr-only">Shopping categories</span>
+    </h1>
 
-  <ul>
-    <li><a href="#">Animals</a></li>
-    <li><a href="#">Computers</a></li>
-    <li><a href="#">Diversity and inclusion</a></li>
-    <li><a href="#">Food</a></li>
-    <li><a href="#">Medicine</a></li>
-    <li><a href="#">Music</a></li>
-  </ul>
-</div>    
+    <ul>
+      <li><a href="#">Animals</a></li>
+      <li><a href="#">Computers</a></li>
+      <li><a href="#">Diversity and inclusion</a></li>
+      <li><a href="#">Food</a></li>
+      <li><a href="#">Medicine</a></li>
+      <li><a href="#">Music</a></li>
+    </ul>
+  </div>
 </body>
 </html>
