@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Question 4 - JavaScript</title>
 </head>
-
 <body>
   <h1>HTML DOM Events</h1>
   <p>Trigger a function on hover or by pressing the button with the keyboard to output "Hello World":</p>
 
+  <!-- Semantic button -->
   <button id="actionButton">Action!</button>
   <p id="demo"></p>
 
@@ -20,12 +19,11 @@
 
     const btn = document.getElementById("actionButton");
 
-    // Mouse support (hover)
+    // Mouse hover
     btn.addEventListener("mouseover", myFunction);
 
-    //  Keyboard & mouse click support
+    // Keyboard activation (Enter/Space) and mouse click
     btn.addEventListener("click", myFunction);
   </script>
 </body>
-
 </html>
