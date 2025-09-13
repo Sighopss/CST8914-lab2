@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Question 4 - JavaScript</title>
+  <title>Keyboard Accessible Button</title>
 </head>
 <body>
   <h1>HTML DOM Events</h1>
-  <p>Trigger a function on hover or by pressing the button with the keyboard to output "Hello World":</p>
+  <p>Press Enter while focusing the button to output "Hello World":</p>
 
-  <!-- Semantic button -->
   <button id="actionButton">Action!</button>
   <p id="demo"></p>
 
   <script>
-    function myFunction() {
-      document.getElementById("demo").innerHTML = "Hello World";
-    }
-
     const btn = document.getElementById("actionButton");
 
-    // Mouse hover
-    btn.addEventListener("mouseover", myFunction);
+    function showMessage() {
+      document.getElementById("demo").textContent = "Hello World";
+    }
 
-    // Keyboard activation (Enter/Space) and mouse click
-    btn.addEventListener("click", myFunction);
+    // Keyboard support: detect Enter key
+    btn.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        showMessage();
+      }
+    });
+
+    // hover
+    btn.addEventListener("mouseover", showMessage);
   </script>
 </body>
 </html>
